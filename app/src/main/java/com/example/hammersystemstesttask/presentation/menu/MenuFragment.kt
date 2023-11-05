@@ -76,7 +76,7 @@ class MenuFragment : Fragment() {
 
     private fun observeCachedFood() {
         viewLifecycleOwner.lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+            repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 menuViewModel.cachedFoodState.collect {
                     when (it) {
                         is MenuState.Exception -> {
@@ -100,11 +100,11 @@ class MenuFragment : Fragment() {
 
     private fun observeCategories() {
         viewLifecycleOwner.lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+            repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 menuViewModel.categoriesState.collect {
                     when (it) {
                         is MenuState.Exception -> {
-//                            applyErrorSnackBar()
+                            applyErrorSnackBar()
                             menuViewModel.dispatchIntent(MenuIntent.LoadCachedCategories)
                         }
 
@@ -126,7 +126,7 @@ class MenuFragment : Fragment() {
 
     private fun observeCachedCategories() {
         viewLifecycleOwner.lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+            repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 menuViewModel.cachedCategoriesState.collect {
                     when (it) {
                         is MenuState.Exception -> {
@@ -149,7 +149,7 @@ class MenuFragment : Fragment() {
 
     private fun observeAllFood() {
         viewLifecycleOwner.lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
+            repeatOnLifecycle(Lifecycle.State.RESUMED) {
                 menuViewModel.foodState.collect {
                     when (it) {
                         is MenuState.Exception -> {

@@ -4,6 +4,8 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Room
+import androidx.room.RoomDatabase
 import androidx.room.Transaction
 import com.example.hammersystemstesttask.data.model.dto.category.CategoryDto
 import com.example.hammersystemstesttask.data.model.dto.category.toEntity
@@ -26,11 +28,11 @@ interface CategoryDao {
 
     @Transaction
     suspend fun updateCategories(
-        food: List<CategoryDto>,
+        categories: List<CategoryDto>,
     ) {
         clearCategories()
 
-        food.forEach { categoryDto ->
+        categories.forEach { categoryDto ->
             insertCategory(
                 categoryDto.toEntity()
             )

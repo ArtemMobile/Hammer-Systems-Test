@@ -34,14 +34,20 @@ class CachedFoodRepositoryImpl @Inject constructor(private val database: FoodDat
         }
 
 
-    override suspend fun cacheFoodResponse(idCategory: Int, foodResponse: FoodResponse, callback: () -> Unit) {
+    override suspend fun cacheFoodResponse(
+        idCategory: Int,
+        foodResponse: FoodResponse,
+        callback: () -> Unit
+    ) {
         database.foodDao().updateFood(idCategory, foodResponse)
         callback()
     }
 
-    override suspend fun cacheCategories(categoriesResponse: CategoriesResponse, callback: () -> Unit) {
+    override suspend fun cacheCategories(
+        categoriesResponse: CategoriesResponse,
+        callback: () -> Unit
+    ) {
         database.categoryDao().updateCategories(categoriesResponse)
         callback()
-
     }
 }
