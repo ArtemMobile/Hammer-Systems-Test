@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="main">#FD3A69</color>
+    <color name="main20">#33FD3A69</color>
+    <color name="grey">#C3C4C9</color>
+    <color name="grey_bottom_nav_item">#263238</color>
+    <color name="grey_bottom_bar">#F0F0F0</color>
+    <color name="black_header_bold">#222831</color>
+    <color name="grey_text_desription">#AAAAAD</color>
+    <color name="food_card_back">#FBFBFB</color>
+    <color name="white_chip">#FFFFFF</color>
+    <color name="divider_color">#F3F5F9</color>
+    <color name="shimmer_placeholder">#dddddd</color>
+    <color name="red">#E53935</color>
+</resources>
